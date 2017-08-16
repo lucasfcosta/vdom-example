@@ -1,0 +1,9 @@
+{
+  "name": "vdom-example",
+  "version": "0.0.1",
+  "description": "A didactic implementation of a VDOM",
+  "main": "index.js",
+  "repository": "https://github.com/lucasfcosta/vdom-example",
+  "author": "lucasfcosta <fernandesdacostalucas@gmail.com>",
+  "license": "MIT"
+}
