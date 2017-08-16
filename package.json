@@ -5,5 +5,12 @@
   "main": "index.js",
   "repository": "https://github.com/lucasfcosta/vdom-example",
   "author": "lucasfcosta <fernandesdacostalucas@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "transpile": "babel index.js --out-file output.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1"
+  }
 }
