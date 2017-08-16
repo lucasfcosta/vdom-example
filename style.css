@@ -1,0 +1,13 @@
+.container {
+    margin: 1em auto;
+    width: 80%;
+    text-align: center;
+}
+
+.cabecalho-top {
+    background-color: cyan;
+}
+
+.nome-do-app-topzera {
+    background-color: yellow;
+}

@@ -7,21 +7,18 @@ function neymar(type, props, ...children) {
     }
 }
 
-function setProperties(node, props) {
-    Object.keys(props).map(prop => {
-        const propName = prop === 'className' ? 'class' : prop
-        node.setAttribute(propName, props[prop])
-    })
-
-}
-
 function createElement(node) {
-    if (typeof node === 'string') {
+    if (typeof node !== 'object') {
         return document.createTextNode(node)
     }
 
     const el = document.createElement(node.type)
-    setProperties(el, node.props)
+
+    Object.keys(node.props).map(prop => {
+        const propName = prop === 'className' ? 'class' : prop
+        el.setAttribute(propName, node.props[prop])
+    })
+
     node.children
         .map(createElement)
         .map(el.appendChild.bind(el))
@@ -29,13 +26,14 @@ function createElement(node) {
     return el
 }
 
-function view() {
+function view(x) {
     return (<div id="frase-reflexiva" className="container">
         <h1 className="cabecalho-top">O ousado chegou</h1>
-        <p className="paragrafo-topzera">Tô chegando com os refri rapazeada</p>
+        <h2 className="nome-do-app-topzera">Relógio de salários do Neymar</h2>
+        <p>Desde que você entrou nessa página, Neymar ganhou {x} dinheiros.</p>
     </div>)
 }
 
 function render(node) {
-    node.appendChild(createElement(view()))
+    node.appendChild(createElement(view(0)))
 }
